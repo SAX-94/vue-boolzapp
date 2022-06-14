@@ -1,4 +1,6 @@
-/* =============={GENERAL}============== */
+/******************************
+    GENERAL STYLES
+*******************************/
 
 * {
     margin: 0;
@@ -23,7 +25,9 @@ body {
     width: 100%;
 }
 
-/* =============={CONTAINER}============== */
+/******************************
+    CONTAINER
+*******************************/
 
 .container {
     width: 80vw;
@@ -31,7 +35,7 @@ body {
     height: 95vh;
 }
 
-/* -------={Container - Top}=------- */
+/* ----- CONTAINER | TOP ----- */
 
 .container .top {
     display: flex;
@@ -95,7 +99,7 @@ body {
     margin: 9px;
 }
 
-/* -------={Container - Body}=------- */
+/* ----- CONTAINER | BODY ----- */
 
 .container .body {
     display: flex;
@@ -103,7 +107,7 @@ body {
     height: calc(100% - 70px);
 }
 
-/* -={Body - notificationsBanner}=- */
+/* ----- NOTIFICATIONS BANNER ----- */
 
 .container .body aside .notificationsBanner {
     display: flex;
@@ -131,7 +135,7 @@ body {
     color: gray;
 }
 
-/* -={Body - search}=- */
+/* ----- SEARCH BAR ----- */
 
 .container .body aside .search {
     width: 100%;
@@ -165,7 +169,7 @@ body {
     border-color: transparent;
 }
 
-/* -={Body - chatList}=- */
+/* ----- CHATLIST ----- */
 
 .container .body aside .chatList {
     width: 100%;
@@ -233,7 +237,7 @@ body {
     color: #bdbabf;
 }
 
-/* -={Body - mainChat}=- */
+/* ----- CURRENT CHAT ROOM ----- */
 
 .container .body .mainChat {
     display: flex;
