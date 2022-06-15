@@ -98,7 +98,7 @@
                         <div class="dropdown-menu">
                             <i class="fa-solid fa-chevron-down dropdown-btn"></i>
                             <div class="dropdown-box" v-if="index === messageMenuIndex">
-                                <div class="menu-option" @click="">
+                                <div class="menu-option">
                                     <span>Info</span>
                                     <i class="fa-solid fa-circle-info"></i>
                                 </div>
@@ -116,7 +116,7 @@
                     <div class="side-btn emoji-btn">
                         <i class="fa-regular fa-face-smile"></i>
                         <div v-if="toggleEmojiValue" class="emoji-tab">
-                            <div v-for="(emoji, index) in emojis" class="emoji" @click="newMessage += emoji">
+                            <div v-for="(emoji, index) in emojis" class="emoji">
                                 <span>{{emoji}}</span>
                             </div>
                         </div>
