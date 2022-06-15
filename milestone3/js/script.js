@@ -172,6 +172,16 @@ const app = new Vue({
         newMessage: "",
         searchedUser: "",
         reply: "Ok!",
+        emojis: [
+            "👍",
+            "❤️",
+            "😂",
+            "😲",
+            "😢",
+            "🙏"
+        ],
+        messageMenuIndex: -1,
+        toggleEmojiValue: false,
     },
     methods: {
         getLastMessage(contact) {
@@ -183,6 +193,26 @@ const app = new Vue({
                 this.messageMenuIndex = -1
             }
             else this.messageMenuIndex = value;
+        },
+        closeEmojiMenu(contactIndex) {
+            if (contactIndex !== this.activeIndex) this.toggleEmojiValue = false;
+        },
+        addMessage(status) {
+            if (this.newMessage.length >= 1 && (status === "sent" || status === "received")) {
+                this.contacts[this.activeIndex].messages.push({
+                    date: "10/01/2020 15:50:00",
+                    message: this.newMessage,
+                    status: status,
+                });
+                this.newMessage = "";
+            }
+        },
+        autoReply() {
+            const self = this;
+            setTimeout(function () {
+                self.newMessage = self.reply;
+                self.addMessage("received");
+            }, 1000);
         },
     }
 })
