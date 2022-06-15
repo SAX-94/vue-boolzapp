@@ -194,9 +194,12 @@ const app = new Vue({
             }
             else this.messageMenuIndex = value;
         },
+<<<<<<< HEAD
         closeEmojiMenu(contactIndex) {
             if (contactIndex !== this.activeIndex) this.toggleEmojiValue = false;
         },
+=======
+>>>>>>> a92bb49bbb02ed0f37ac4f6011b0fe72097e0b78
         addMessage(status) {
             if (this.newMessage.length >= 1 && (status === "sent" || status === "received")) {
                 this.contacts[this.activeIndex].messages.push({
