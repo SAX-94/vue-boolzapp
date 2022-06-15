@@ -178,5 +178,11 @@ const app = new Vue({
             if (contact.messages.length === 0) return "Nessun messaggio";
             else return contact.messages[contact.messages.length - 1].message;
         },
+        toggleMessageMenu(value) {
+            if ((value === -1) || (value === this.messageMenuIndex)) {
+                this.messageMenuIndex = -1
+            }
+            else this.messageMenuIndex = value;
+        },
     }
 })

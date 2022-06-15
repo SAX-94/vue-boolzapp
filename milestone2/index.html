@@ -73,7 +73,8 @@
                 <!-- Sezione lista chat -->
                 <div class="chatList">
                     <template v-for="(contact, index) in contacts">
-                        <div v-if="contact.visible" class="chat">
+                        <div v-if="contact.visible" class="chat" :class="{'active' : activeIndex == index}" @click="activeIndex = index;
+                        newMessage = ''">
                             <div class="proPic">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>
@@ -93,7 +94,7 @@
                 <!-- Sezione messaggi -->
                 <div class="messages">
                     <div v-for="(currentMessage, index) in contacts[activeIndex].messages" class="message"
-                        :class="currentMessage.status">
+                        :class="currentMessage.status" @mouseleave="toggleMessageMenu(-1)">
                         <p>{{currentMessage.message}}</p>
                         <div class="dropdown-menu">
                             <i class="fa-solid fa-chevron-down dropdown-btn"></i>
