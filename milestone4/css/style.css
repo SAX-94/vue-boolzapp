@@ -1,0 +1,397 @@
+/******************************
+    GENERAL STYLES
+*******************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(#009688 0,
+            #009688 15vh,
+            #d9dbd5 15vh,
+            #d9dbd5 100vh);
+}
+
+.proPic img {
+    width: 100%;
+}
+
+/******************************
+    CONTAINER
+*******************************/
+
+.container {
+    width: 80vw;
+    min-width: 950px;
+    height: 95vh;
+}
+
+/* ----- CONTAINER | TOP ----- */
+
+.container .top {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+.container .top .proPic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.container .top .account {
+    display: flex;
+    align-items: center;
+}
+
+.container .top .account .info,
+.container .top .account>.name {
+    padding-left: 15px;
+}
+
+.container .top .account .lastSeen {
+    font-size: 14px;
+    color: gray;
+}
+
+.container .top .left,
+.container .body aside {
+    width: 35%;
+}
+
+.container .top .right,
+.container .body .mainChat {
+    width: 65%;
+}
+
+.container .top .left {
+    height: 100%;
+    border-right: 1px solid lightgray;
+}
+
+.container .top .right {
+    height: 100%;
+}
+
+.container .top .left,
+.container .top .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px 0 10px;
+}
+
+.container .top .icons i {
+    color: #b1b1b1;
+    font-size: 22px;
+    margin: 9px;
+}
+
+/* ----- CONTAINER | BODY ----- */
+
+.container .body {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 70px);
+}
+
+/* ----- NOTIFICATIONS BANNER ----- */
+
+.container .body aside .notificationsBanner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    background-color: #8edafc;
+}
+
+.container .body aside .notificationsBanner i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 22px;
+    background-color: #f2fbff;
+    color: #8edafc;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+.container .body aside .notificationsBanner a {
+    font-size: 14px;
+    color: gray;
+}
+
+/* ----- SEARCH BAR ----- */
+
+.container .body aside .search {
+    width: 100%;
+    height: 50px;
+    padding: 8px;
+    background-color: #fafafa;
+}
+
+.container .body aside .search .searchBar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #f6f6f6;
+}
+
+.container .body aside .search .searchBar i {
+    height: 100%;
+    width: 88px;
+    line-height: 34px;
+    text-align: center;
+    border-right: 1px solid #f6f6f6;
+    color: #b4b8ba;
+}
+
+.container .body aside .search .searchBar input {
+    height: 100%;
+    width: calc(100% - 88px);
+    padding-left: 10px;
+    border-color: transparent;
+}
+
+/* ----- CHATLIST ----- */
+
+.container .body aside .chatList {
+    width: 100%;
+    height: calc(100% - 130px);
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.container .body aside .chatList .chat {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 10px 10px 10px 20px;
+    border-bottom: 1px solid lightgray;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color .15s;
+}
+
+.container .body aside .chatList .chat:hover {
+    background-color: #e9ebeb;
+}
+
+.container .body aside .chatList .chat.active {
+    background-color: #dfdfdf;
+}
+
+.container .body aside .chatList .chat .proPic {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.container .body aside .chatList .chat .info {
+    width: calc(100% - 80px);
+}
+
+.container .body aside .chatList .chat .topText {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container .body aside .chatList .chat:hover .lastMessage,
+.container .body aside .chatList .chat:hover .time,
+.container .body aside .chatList .chat.active .lastMessage,
+.container .body aside .chatList .chat.active .time {
+    color: gray;
+}
+
+.container .body aside .chatList .chat .name {
+    font-size: 18px;
+}
+
+.container .body aside .chatList .chat .lastMessage {
+    font-size: 14px;
+    color: #bdbabf;
+}
+
+.container .body aside .chatList .chat .time {
+    font-size: 12px;
+    color: #bdbabf;
+}
+
+/* ----- CURRENT CHAT ROOM ----- */
+
+.container .body .mainChat {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url("../img/mine.jpg");
+}
+
+.container .body .mainChat .messages {
+    height: calc(100% - 70px);
+    padding: 5% 10%;
+    overflow-y: scroll;
+}
+
+.container .body .mainChat .messages .message {
+    position: relative;
+    padding: 14px 15px 5px 15px;
+    border-radius: 10px;
+    min-width: 313px;
+    width: max-content;
+    max-width: 450px;
+    margin-bottom: 10px;
+    overflow-wrap: break-word;
+    clear: both;
+}
+
+.container .body .mainChat .messages .message.sent {
+    float: right;
+    background-color: #d5f9ba;
+}
+
+.container .body .mainChat .messages .message.received {
+    float: left;
+    background-color: white;
+}
+
+.container .body .mainChat .messages .message p {
+    margin-bottom: 5px;
+}
+
+.container .body .mainChat .messages .message .dropdown-menu {
+    position: absolute;
+    opacity: 0;
+    top: 8px;
+    right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .15s;
+    animation: dropdown-btn-out .15s linear;
+    background-color: transparent;
+    color: #bdbabf;
+}
+
+.container .body .mainChat .messages .message.sent .dropdown-menu {
+    text-shadow: 0px 2px 1px #d5f9ba;
+}
+
+.container .body .mainChat .messages .message.received .dropdown-menu {
+    text-shadow: 0px 2px 1px white;
+}
+
+.container .body .mainChat .messages .message .dropdown-menu:hover {
+    color: gray;
+}
+
+.container .body .mainChat .messages .message .dropdown-btn {
+    transition: transform .1s linear;
+}
+
+.container .body .mainChat .messages .message .dropdown-btn.active {
+    transform: rotate(180deg);
+    color: gray;
+}
+
+.container .body .mainChat .messages .message:hover .dropdown-menu {
+    opacity: 1;
+    animation: dropdown-btn-in .15s linear;
+}
+
+.container .body .mainChat .messages .message .time {
+    font-size: 10px;
+    width: 100%;
+    text-align: right;
+    color: #bdbabf;
+}
+
+/* -={Body - keyboard}=- */
+
+.container .body .mainChat .keyboard {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    background-color: #f3eeea;
+}
+
+.container .body .mainChat .keyboard .side-btn {
+    position: relative;
+    font-size: 24px;
+    width: 10%;
+    text-align: center;
+}
+
+.container .body .mainChat .keyboard .side-btn i {
+    color: gray;
+    cursor: pointer;
+    transition: transform .1s linear;
+}
+
+.container .body .mainChat .keyboard .side-btn i:hover {
+    color: rgb(90, 90, 90);
+    transform: scale(1.3);
+}
+
+.container .body .mainChat .keyboard .side-btn.emoji-btn .emoji-tab {
+    position: absolute;
+    top: -100px;
+    left: 38px;
+    display: flex;
+    flex-wrap: wrap;
+    width: max-content;
+    max-width: 450px;
+    overflow-x: scroll;
+    height: 60px;
+    background-color: #eaeaea;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.container .body .mainChat .keyboard .side-btn.emoji-btn .emoji-tab .emoji {
+    padding: 0 10px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .body .mainChat .keyboard .side-btn.emoji-btn .emoji-tab .emoji:hover {
+    background-color: lightgray;
+}
+
+.container .body .mainChat .keyboard .side-btn.emoji-btn .emoji-tab .emoji span {
+    transition: transform .1s linear;
+}
+
+.container .body .mainChat .keyboard .side-btn.emoji-btn .emoji-tab .emoji:hover span {
+    transform: scale(1.3);
+}
+
+.container .body .mainChat .keyboard input {
+    width: 80%;
+    height: 72.5%;
+    border: 1px solid white;
+    padding: 15px;
+    font-size: 14px;
+    border-radius: 5px;
+}
