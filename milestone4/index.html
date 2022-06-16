@@ -73,8 +73,7 @@
                 <!-- Sezione lista chat -->
                 <div class="chatList">
                     <template v-for="(contact, index) in contacts">
-                        <div v-if="contact.visible" class="chat" :class="{'active' : activeIndex == index}" @click="activeIndex = index;
-                        newMessage = ''">
+                        <div v-if="contact.visible" class="chat" :class="{'active' : activeIndex == index}" @click="activeIndex = index; closeEmojiMenu(index); newMessage = ''">
                             <div class="proPic">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>
