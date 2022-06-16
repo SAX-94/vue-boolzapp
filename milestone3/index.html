@@ -123,8 +123,7 @@
                         </div>
                     </div>
                     <input v-model.trim="newMessage" @click="toggleEmojiValue = false" @keyUp="toggleEmojiValue = false"
-                        @keyUp.enter="addMessage('sent');
-                          autoReply()" type="text" placeholder="Scrivi un messaggio">
+                        @keyUp.enter="addMessage('sent'); autoReply()" type="text" placeholder="Scrivi un messaggio">
                     <div class="side-btn">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
