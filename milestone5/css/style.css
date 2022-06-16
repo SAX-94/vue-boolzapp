@@ -395,3 +395,38 @@ body {
     font-size: 14px;
     border-radius: 5px;
 }
+
+.dropdown-menu .dropdown-box {
+    position: absolute;
+    top: 17px;
+    right: 0;
+    border-radius: 7px;
+    overflow: hidden;
+    box-shadow: 2px 2px 7px black;
+    background-color: #eaeaea;
+    z-index: 9;
+    width: max-content;
+}
+
+.dropdown-menu .dropdown-box .menu-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: black;
+}
+
+.dropdown-menu .dropdown-box .menu-option span {
+    margin-right: 40px;
+}
+
+.dropdown-menu .dropdown-box .menu-option.delete {
+    color: red;
+}
+
+.dropdown-menu .dropdown-box .menu-option i {
+    font-size: 15px;
+}
+
+.dropdown-menu .dropdown-box .menu-option:hover {
+    background-color: lightgray;
+}

@@ -222,5 +222,9 @@ const app = new Vue({
                 contact.visible = this.checkContact(contact.name);
             }
         },
+        deleteMessage(messageIndex) {
+            this.contacts[this.activeIndex].messages.splice(messageIndex, 1);
+            this.messageMenuIndex = -1;
+        },
     }
 })

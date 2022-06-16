@@ -96,13 +96,13 @@
                         :class="currentMessage.status" @mouseleave="toggleMessageMenu(-1)">
                         <p>{{currentMessage.message}}</p>
                         <div class="dropdown-menu">
-                            <i class="fa-solid fa-chevron-down dropdown-btn"></i>
+                            <i class="fa-solid fa-chevron-down dropdown-btn" :class="{'active':index === messageMenuIndex}" @click="toggleMessageMenu(index)"></i>
                             <div class="dropdown-box" v-if="index === messageMenuIndex">
                                 <div class="menu-option">
                                     <span>Info</span>
                                     <i class="fa-solid fa-circle-info"></i>
                                 </div>
-                                <div class="menu-option delete">
+                                <div class="menu-option delete" @click="deleteMessage(index)">
                                     <span>Elimina</span>
                                     <i class="fa-regular fa-trash-can"></i>
                                 </div>
