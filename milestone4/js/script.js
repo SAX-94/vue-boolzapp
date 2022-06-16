@@ -214,5 +214,13 @@ const app = new Vue({
                 self.addMessage("received");
             }, 1000);
         },
+        checkContact(username) {
+            return ((this.searchedUser.trim() === "") || (username.toLowerCase().includes(this.searchedUser.toLowerCase())));
+        },
+        filterUsers() {
+            for (let contact of this.contacts) {
+                contact.visible = this.checkContact(contact.name);
+            }
+        },
     }
 })
